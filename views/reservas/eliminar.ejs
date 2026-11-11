@@ -1,0 +1,41 @@
+<section class="confirmacion-eliminacion">
+    <h1>Confirmar eliminación de reserva</h1>
+
+    <p>
+        Estás por eliminar permanentemente la siguiente reserva:
+    </p>
+
+    <dl class="ficha-reserva">
+        <dt>Identificador:</dt>
+        <dd><%= reserva.id %></dd>
+
+        <dt>Estudiante:</dt>
+        <dd><%= reserva.estudiante %></dd>
+
+        <dt>Sala:</dt>
+        <dd><%= reserva.sala %></dd>
+
+        <dt>Fecha:</dt>
+        <dd><%= reserva.fecha %></dd>
+
+        <dt>Turno:</dt>
+        <dd><%= reserva.turno %></dd>
+    </dl>
+
+    <p class="mensaje-error" role="alert">
+        Atención: esta acción es permanente y no se puede deshacer.
+    </p>
+
+    <form
+        action="/reservas/<%= reserva.id %>/eliminar"
+        method="POST"
+    >
+        <input type="hidden" name="confirmar" value="si">
+
+        <button type="submit">Confirmar eliminación</button>
+
+        <a href="/reservas/<%= reserva.id %>">
+            Cancelar
+        </a>
+    </form>
+</section>

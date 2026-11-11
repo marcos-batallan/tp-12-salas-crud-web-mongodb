@@ -1,0 +1,48 @@
+<section class="formulario-reserva">
+  <h1>Cambiar estado de la reserva</h1>
+
+  <p>
+    <strong>Identificador:</strong>
+    <%= id %>
+  </p>
+
+  <% if (errores && errores.length > 0) { %>
+    <div class="mensaje-error" role="alert">
+      <ul>
+        <% errores.forEach((error) => { %>
+          <li><%= error %></li>
+        <% }); %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form
+    action="/reservas/<%= id %>/estado"
+    method="POST"
+  >
+    <div class="campo-formulario">
+      <label for="estado">Estado de la reserva</label>
+
+      <select id="estado" name="estado" required>
+        <option value="" disabled
+          <%= !valores.estado ? "selected" : "" %>>
+          Seleccione un estado
+        </option>
+
+        <option value="pendiente"
+          <%= valores.estado === "pendiente" ? "selected" : "" %>>
+          Pendiente
+        </option>
+
+        <option value="confirmada"
+          <%= valores.estado === "confirmada" ? "selected" : "" %>>
+          Confirmada
+        </option>
+      </select>
+    </div>
+
+    <button type="submit">Guardar estado</button>
+
+    <a href="/reservas/<%= id %>">Cancelar</a>
+  </form>
+</section>

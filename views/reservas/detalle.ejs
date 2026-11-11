@@ -1,0 +1,42 @@
+<section class="detalle-reserva">
+    <h1><%= seccion %>: detalle</h1>
+
+    <dl class="ficha-reserva">
+        <dt>Estudiante:</dt>
+        <dd><%= reserva.estudiante %></dd>
+
+        <dt>Email:</dt>
+        <dd><%= reserva.email %></dd>
+
+        <dt>Sala:</dt>
+        <dd><%= reserva.sala %></dd>
+
+        <dt>Fecha:</dt>
+        <dd><%= reserva.fecha %></dd>
+
+        <dt>Turno:</dt>
+        <dd><%= reserva.turno %></dd>
+
+        <dt>Cant. Personas:</dt>
+        <dd><%= reserva.personas %></dd>
+
+        <dt>Estado:</dt>
+        <dd><%= reserva.estado %></dd>
+    </dl>
+
+    <p>
+        <a href="/reservas/<%= reserva.id %>/editar">Editar reserva</a>
+    </p>
+
+    <p>
+        <a href="/reservas/<%= reserva.id %>/estado">Cambiar estado</a>
+    </p>
+
+    <p>
+        <a href="/reservas/<%= reserva.id %>/eliminar">Eliminar reserva</a>
+    </p>
+
+    <p>
+        <a href="/reservas">Volver al listado de reservas</a>
+    </p>
+</section>

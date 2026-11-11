@@ -1,0 +1,35 @@
+{
+  "name": "tp-12-salas-crud-web-mongodb",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "author": "Marcos Batallan",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "start:local": "node --env-file=.env src/index.js",
+    "format": "prettier --write src scripts",
+    "format:check": "prettier --check src scripts",
+    "lint": "eslint src scripts",
+    "check": "npm run format:check && npm run lint"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^9.11.2",
+    "morgan": "^1.12.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
+  }
+}

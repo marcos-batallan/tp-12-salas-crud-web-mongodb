@@ -17,7 +17,7 @@ const reservaSchema = new mongoose.Schema(
       type: String,
       required: [
         true,
-        "La sala es obligatoria; eligir Sala Norte, Sala Sur o Sala Multimedia",
+        "La sala es obligatoria; elegir Sala Norte, Sala Sur o Sala Multimedia",
       ],
       enum: ["Sala Norte", "Sala Sur", "Sala Multimedia"],
     },
